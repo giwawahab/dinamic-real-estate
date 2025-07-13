@@ -20,3 +20,4 @@ yarn-error.log
 
 
 /resources/views/admin-template
+/public/admin/assets/modules
