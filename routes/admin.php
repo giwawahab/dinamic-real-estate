@@ -15,14 +15,14 @@ Route::group(
             'user.type:admin'
         ],
         'prefix' => 'admin',
-        'as' => 'admin'
+        'as' => 'admin.'
     ],
 
     function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('.dashboard.index');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
         /** Profile Routes**/
-        Route::get('/profile', [ProfileController::class, 'index'])->name('.profile');
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+        Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     }
 );
-
