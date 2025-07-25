@@ -23,7 +23,7 @@
                     <h4>Update Profile</h4>
                   </div>
                   <div class="card-body">
-                    <form action="{{ route('admin.profile.update', ) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.profile.update' ) }}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
 
                         @csrf
@@ -118,7 +118,44 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Update Password</h4>
+                  </div>
+                  <div class="card-body">
+                    <form action="{{ route('admin.profile-password.update') }}" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
+
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password">Password <span class="text-danger">*</span></label>
+                                    <input type="password" name="password"  id="password" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="c_password">Confirm Password <span class="text-danger">*</span></label>
+                                    <input type="password" name="password_confirmation"  id="c_password" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-danger">Update Password</button>
                                 </div>
                             </div>
                         </div>

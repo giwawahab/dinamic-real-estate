@@ -43,7 +43,22 @@ class ProfileController extends Controller
         $user->save();
 
         toastr()->success('Updated successfully');
-        
+
+        return redirect()->back();
+    }
+
+    function passwordUpdate(Request $request): RedirectResponse
+    {
+
+        $request->validate(([
+            'password' => ['required', 'min:5', 'confirmed']
+        ]));
+
+        $user = Auth::user();
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        toastr()->success('Password successfull');
         return redirect()->back();
     }
 }
